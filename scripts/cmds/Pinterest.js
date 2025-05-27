@@ -31,14 +31,14 @@ module.exports = {
 
         if (!q || !length) {
             return api.sendMessage(
-                "❌| Wrong Format",
+                "📛| Wrong Format",
                 event.threadID,
                 event.messageID,
             );
         }
 
         try {
-            const w = await api.sendMessage("Please wait...", event.threadID);
+            const w = await api.sendMessage("Please w8🦆", event.threadID);
             const response = await axios.get(
                 `${await baseApiUrl()}/pinterest?search=${encodeURIComponent(q)}&limit=${encodeURIComponent(length)}`,
             );
@@ -74,7 +74,7 @@ module.exports = {
                 {
                     body: `
 ✅ | Here's Your Query Based images
-🐤 | Total Images Count: ${totalImagesCount}`,
+🦆 | Total Images Count: ${totalImagesCount}`,
                     attachment: diptoo,
                 },
                 event.threadID,
