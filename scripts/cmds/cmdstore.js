@@ -33,12 +33,12 @@ module.exports.onStart = async function ({ api, event, args }) {
       } else if (query.length === 1) {
         finalArray = cmds.filter(cmd => cmd.cmd.startsWith(query));
         if (finalArray.length === 0) {
-          return api.sendMessage(`❌ | No commands found starting with "${query}".`, event.threadID, event.messageID);
+          return api.sendMessage(`🦆 | No commands found starting with "${query}".`, event.threadID, event.messageID);
         }
       } else {
         finalArray = cmds.filter(cmd => cmd.cmd.includes(query));
         if (finalArray.length === 0) {
-          return api.sendMessage(`❌ | Command "${query}" not found.`, event.threadID, event.messageID);
+          return api.sendMessage(`🦆 | Command "${query}" not found.`, event.threadID, event.messageID);
         }
       }
     }
@@ -46,7 +46,7 @@ module.exports.onStart = async function ({ api, event, args }) {
     const totalPages = Math.ceil(finalArray.length / ITEMS_PER_PAGE);
     if (page < 1 || page > totalPages) {
       return api.sendMessage(
-        `❌ | Invalid page number. Please enter a number between 1 and ${totalPages}.`,
+        `🦆 | Invalid page number. Please enter a number between 1 and ${totalPages}.`,
         event.threadID,
         event.messageID
       );
@@ -82,7 +82,7 @@ global.GoatBot.onReply.set(info.messageID, {
     console.log(finalArray)
   } catch (error) {
     api.sendMessage(
-      "❌ | Failed to retrieve commands.",
+      "🦆 | Failed to retrieve commands.",
       event.threadID,
       event.messageID
     );
@@ -92,7 +92,7 @@ global.GoatBot.onReply.set(info.messageID, {
 module.exports.onReply = async function ({ api, event, Reply }) {
 
   if (Reply.author != event.senderID) {
-    return api.sendMessage("Who are you? 🐸", event.threadID, event.messageID);
+    return api.sendMessage("Who are you? 🦆", event.threadID, event.messageID);
   }
   const reply = parseInt(event.body);
   const startIndex = (Reply.page - 1) * ITEMS_PER_PAGE;
@@ -100,7 +100,7 @@ module.exports.onReply = async function ({ api, event, Reply }) {
 
   if (isNaN(reply) || reply < startIndex + 1 || reply > endIndex) {
     return api.sendMessage(
-      `❌ | Please reply with a number between ${startIndex + 1} and ${Math.min(endIndex, Reply.cmdName.length)}.`,
+      `🦆 | Please reply with a number between ${startIndex + 1} and ${Math.min(endIndex, Reply.cmdName.length)}.`,
       event.threadID,
       event.messageID
     );
@@ -112,7 +112,7 @@ const  { status }  = Reply.cmdName[reply - 1]
     const selectedCmdUrl = response.data[cmdName];
     if (!selectedCmdUrl) {
       return api.sendMessage(
-        "❌ | Command URL not found.",
+        "🦆 | Command URL not found.",
         event.threadID,
         event.messageID
       );
@@ -122,7 +122,7 @@ const  { status }  = Reply.cmdName[reply - 1]
     api.sendMessage(msg, event.threadID, event.messageID);
   } catch (error) {
     api.sendMessage(
-      "❌ | Failed to retrieve the command URL.",
+      "🦆 | Failed to retrieve the command URL.",
       event.threadID,
       event.messageID
     );
