@@ -6,7 +6,7 @@
 # it's Render Bot run
 
 <img
-src="[https://drive.google.com/uc?export=view&id=1oXJ7ElC9nmETQ3489LzVpn2sB4pEI51-](https://drive.google.com/uc?export=view&id=10FPC1ljAAUo68vbjlmd6dxOu875pPxCT)"
+src="(https://drive.google.com/uc?export=view&id=1oXJ7ElC9nmETQ3489LzVpn2sB4pEI51-)"
 alt="profile">
 
 # It's messenger Artificial intelligence Chat Bot 
