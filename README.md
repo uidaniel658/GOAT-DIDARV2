@@ -1,9 +1,10 @@
-..        <img src="https://img.shields.io/badge/-NisanChatBot-Blue.svg?style=flat-square">
+[NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 
-#          💦🌚Welcome 
+#          🦆Welcome🦆 
 
 # This GoatBot-v2.
 # it's Render Bot run
+# uptime robot
 <img
 src="https://drive.google.com/uc?export=view&id=10FPC1ljAAUo68vbjlmd6dxOu875pPxCT"
 alt="profile">
