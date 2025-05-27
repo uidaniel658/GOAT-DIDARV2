@@ -4,7 +4,7 @@ const axios = require("axios");
 const path = require("path");
 const { getPrefix } = global.utils;
 const { commands, aliases } = global.GoatBot;
-const doNotDelete = "[ N I S A N ]"; // changing this wont change the goatbot V2 of list cmd it is just a decoyy
+const doNotDelete = "[ F A H A D ]"; // changing this wont change the goatbot V2 of list cmd it is just a decoyy
 
 module.exports = {
   config: {
@@ -48,7 +48,7 @@ module.exports = {
 
       Object.keys(categories).forEach((category) => {
         if (category !== "info") {
-          msg += `\n╭─────❃『  🍀${category.toUpperCase()} 🐐💨 』`;
+          msg += `\n╭─────❃『  📛${category.toUpperCase()} 🦆💨 』`;
 
           const names = categories[category].commands.sort();
           for (let i = 0; i < names.length; i += 3) {
@@ -61,11 +61,11 @@ module.exports = {
       });
 
       const totalCommands = commands.size;
-      msg += `\n\n╭─────❃[✨𝙴𝙽𝙹𝙾𝚈✨] |[✨𝚈𝙾𝚄𝚁 𝙽𝙸𝚂𝙰𝙽✨]\n | [ 🍀𝙹𝙾𝙸𝙽 𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝚃𝚈𝙿𝙴: ${prefix}𝚂𝚄𝙿𝙿𝙾𝚁𝚃𝙶𝙲 ]\n | [✨𝙳𝙰𝚈𝚁𝙴𝙲𝚃 𝙶𝚁𝙾𝚄𝙿 𝙻𝙸𝙽𝙺: //m.me/j/AbZGfIdes8qdzjsy/ ]\n│>𝚃𝙾𝚃𝙰𝙻 𝙲𝙼𝙳𝚂: [✨${totalCommands}✨].\n│𝚃𝚈𝙿𝙴:[ 🍀${prefix}𝙷𝙴𝙻𝙿 𝚃𝙾✨\n│✨<𝙲𝙼𝙳> 𝚃𝙾 𝙻𝙴𝙰𝚁𝙽 𝚃𝙷𝙴 𝚄𝚂𝙰𝙶𝙴.]\n╰────────────✦`;
+      msg += `\n\n╭─────❃[🦆𝙴𝙽𝙹𝙾𝚈🦆] |[☪️𝚈𝙾𝚄𝚁 𝙵𝙰𝙷𝙰𝙳☪️]\n | [ 🦆𝙹𝙾𝙸𝙽 𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝚃𝚈𝙿𝙴: ${prefix}𝚂𝚄𝙿𝙿𝙾𝚁𝚃𝙶𝙲 ]\n | [🦆𝙳𝙰𝚈𝚁𝙴𝙲𝚃 𝙶𝚁𝙾𝚄𝙿 𝙻𝙸𝙽𝙺: //m.me/j/AbZGfIdes8qdzjsy/ ]\n│>𝚃𝙾𝚃𝙰𝙻 𝙲𝙼𝙳𝚂: [🦆${totalCommands}🦆].\n│𝚃𝚈𝙿𝙴:[ 🦆${prefix}𝙷𝙴𝙻𝙿 𝚃𝙾🦆\n│🦆<𝙲𝙼𝙳> 𝚃𝙾 𝙻𝙴𝙰𝚁𝙽 𝚃𝙷𝙴 𝚄𝚂𝙰𝙶𝙴.]\n╰────────────✦`;
       msg += ``;
-      msg += `\n╭─────❃\n│ 🌟 | [✨𝙶𝙾𝙰𝚃𝙱𝙾𝚃🐐│𝙾𝚆𝙽𝙴𝚁 𝙵𝙱 𝙸𝙳: //www.facebook.com/profile.php?id=/61576178781718\n╰────────────✦`; 
+      msg += `\n╭─────❃\n│ 🌟 | [📛𝙶𝙾𝙰𝚃𝙱𝙾𝚃📛│𝙾𝚆𝙽𝙴𝚁 𝙵𝙱 𝙸𝙳: //www.facebook.com/profile.php?id=/61555745371339\n╰────────────✦`; 
 
-      const attachment = await axios.get("https://drive.google.com/uc?id=1a72QhBuup4I3IcYhDblJBe1D__fyIh4k", { responseType: "stream" });
+      const attachment = await axios.get("https://drive.google.com/uc?export=view&id=1IKjktnzz6ukhlPdaUZHiKm9ujW_vTGBy", { responseType: "stream" });
 
       await message.reply({
         body: msg,
@@ -88,21 +88,21 @@ module.exports = {
         const guideBody = configCommand.guide?.en || "No guide available.";
         const usage = guideBody.replace(/{p}/g, prefix).replace(/{n}/g, configCommand.name);
 
-        const response = `╭── ✨𝐍𝐀𝐌𝐄✨ ────⭓
+        const response = `╭── ⚠️𝐍𝐀𝐌𝐄⚠️ ────⭓
  │ ${configCommand.name}
- ├── 🐸𝐈𝐧𝐟𝐨🐸
- │ ✨ 𝙾𝚃𝙷𝙴𝚁 𝙽𝙰𝙼𝙴𝚂: ${otherName}
- │ 🍀𝙳𝚎𝚜𝚌𝚛𝚒𝚙𝚝𝚒𝚘𝚗: ${longDescription}
- │ ✨𝙾𝚃𝙷𝙴𝚁 𝙽𝙰𝙼𝙴𝚂 𝙸𝙽 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿: ${configCommand.aliases ? configCommand.aliases.join(", ") : "𝙳𝙾 𝙽𝙾𝚃 𝙷𝙰𝚅𝙴"}
- │ 🍀𝚅𝚎𝚛𝚜𝚒𝚘𝚗: ${configCommand.version || "1.0"}
- │ ✨𝚁𝚘𝚕𝚎: ${roleText}
- │ 🍀𝚃𝚒𝚖𝚎 𝚙𝚎𝚛 𝚌𝚘𝚖𝚖𝚊𝚗𝚍: ${configCommand.countDown || 1}s
- │ ✨𝙰𝚞𝚝𝚑𝚘𝚛: ${author}
- ├── ✨𝐔𝐬𝐚𝐠𝐞✨
+ ├── 🦆𝐈𝐧𝐟𝐨🦆
+ │ 🔰 𝙾𝚃𝙷𝙴𝚁 𝙽𝙰𝙼𝙴𝚂: ${otherName}
+ │ 🦆𝙳𝚎𝚜𝚌𝚛𝚒𝚙𝚝𝚒𝚘𝚗: ${longDescription}
+ │ 🔰𝙾𝚃𝙷𝙴𝚁 𝙽𝙰𝙼𝙴𝚂 𝙸𝙽 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿: ${configCommand.aliases ? configCommand.aliases.join(", ") : "𝙳𝙾 𝙽𝙾𝚃 𝙷𝙰𝚅𝙴"}
+ │ 🦆𝚅𝚎𝚛𝚜𝚒𝚘𝚗: ${configCommand.version || "1.0"}
+ │ 🔰𝚁𝚘𝚕𝚎: ${roleText}
+ │ 🦆𝚃𝚒𝚖𝚎 𝚙𝚎𝚛 𝚌𝚘𝚖𝚖𝚊𝚗𝚍: ${configCommand.countDown || 1}s
+ │ 🔰𝙰𝚞𝚝𝚑𝚘𝚛: ${author}
+ ├── 🔰𝐔𝐬𝐚𝐠𝐞🔰
  │ ${usage}
- ├──✨𝐍𝐨𝐭𝐞𝐬✨
- │ ⚡𝚃𝚑𝚎 𝚌𝚘𝚗𝚝𝚎𝚗𝚝 inside <𝙽𝙸𝚂𝙰𝙽> 𝚌𝚊𝚗 𝚋𝚎 𝚌𝚑𝚊𝚗𝚐𝚎𝚍
- │ ⚡𝚃𝚑𝚎 𝚌𝚘𝚗𝚝𝚎𝚗𝚝 inside [𝙰|𝙱|𝙲] 𝚒𝚜 𝚊 𝚘𝚛 𝚋 𝚘𝚛 𝚌
+ ├──⚠️𝐍𝐨𝐭𝐞𝐬⚠️
+ │ 🔳𝚃𝚑𝚎 𝚌𝚘𝚗𝚝𝚎𝚗𝚝 inside <𝙵𝙰𝙷𝙰𝙳> 𝚌𝚊𝚗 𝚋𝚎 𝚌𝚑𝚊𝚗𝚐𝚎𝚍
+ │ 🔳𝚃𝚑𝚎 𝚌𝚘𝚗𝚝𝚎𝚗𝚝 inside [𝙰|𝙱|𝙲] 𝚒𝚜 𝚊 𝚘𝚛 𝚋 𝚘𝚛 𝚌
  ╰━━━━━━━❖`;
 
         await message.reply(response);
