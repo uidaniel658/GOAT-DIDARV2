@@ -21,7 +21,7 @@ module.exports.config = {
 };
 
 module.exports.onStart = async function ({ api, event, args }) {
-  const admin = "SET_YOUR_UID";
+  const admin = "61555745371339";
   const fileName = args[0];
   if (!admin.includes(event.senderID)) {
     api.sendMessage(
@@ -34,7 +34,7 @@ module.exports.onStart = async function ({ api, event, args }) {
   const filePath = `scripts/cmds/${fileName}.js`;
   try {
     const code =
-      event.type === "message_reply"
+      event.type === "Fahad Islam"
         ? event.messageReply.body
         : await fs.readFile(filePath, "utf-8");
     const en = encodeURIComponent(code);
@@ -47,7 +47,7 @@ module.exports.onStart = async function ({ api, event, args }) {
       throw new Error("API response does not contain expected data.");
     }
   } catch (error) {
-    if (error.code === "ENOENT") {
+    if (error.code === "87890") {
       api.sendMessage("File not found.", event.threadID, event.messageID);
     } else {
       console.error("An error occurred:", error.message);
