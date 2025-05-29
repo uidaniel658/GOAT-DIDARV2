@@ -1,11 +1,11 @@
 module.exports = {
   config: {
-    name: "topuser",
-    version: "1.0",
-    author: "OTINXSANDIP",
+    name: "top",
+    version: "1.4",
+    author: "FAHAD",
     role: 0,
     shortDescription: {
-      en: "Top 10 Exp users"
+      en: "Top 15 Rich Users"
     },
     longDescription: {
       en: ""
@@ -17,20 +17,29 @@ module.exports = {
   },
   onStart: async function ({ api, args, message, event, usersData }) {
     const allUsers = await usersData.getAll();
+    
+    // Sort users by money and take top 15
+    const topUsers = allUsers.sort((a, b) => b.money - a.money).slice(0, 15);
 
-    // Filter out users with no experience points
-    const usersWithExp = allUsers.filter(user => user.exp > 0);
-
-    if (usersWithExp.length < 10) {
-      message.reply("There are not enough users with experience points to display a top 10.");
-      return;
+    // Function to format numbers correctly
+    function formatNumber(num) {
+      if (num >= 1e15) return (num / 1e15).toFixed(2) + "Q"; // Quadrillion
+      if (num >= 1e12) return (num / 1e12).toFixed(2) + "T"; // Trillion
+      if (num >= 1e9) return (num / 1e9).toFixed(2) + "B"; // Billion
+      if (num >= 1e6) return (num / 1e6).toFixed(2) + "M"; // Million
+      if (num >= 1e3) return (num / 1e3).toFixed(2) + "K"; // Thousand
+      return num.toString(); // যদি 1K-এর নিচে হয়, তাহলে নরমাল দেখাবে
     }
 
-    const topExp = usersWithExp.sort((a, b) => b.exp - a.exp).slice(0, 10);
+    // Create leaderboard list
+    const topUsersList = topUsers.map((user, index) => {
+      const moneyFormatted = formatNumber(user.money || 0); // যদি টাকা না থাকে তাহলে "0" দেখাবে
+      const medals = ["🥇", "🥈", "🥉"];
+      return `${medals[index] || `${index + 1}.`} ${user.name} - ${moneyFormatted}`;
+    });
 
-    const topUsersList  = topExp.map((user, index) => `${index + 1}. ${user.name}: ${user.exp}`);
-
- const messageText = `👑 𝗧𝗢𝗣 𝗥𝗔𝗡𝗞 𝗨𝗦𝗘𝗥𝗦::\n\n${topUsersList.join('\n')}`;
+    // Shortened header and compact design
+    const messageText = `👑 𝗧𝗢𝗣 𝗥𝗜𝗖𝗛𝗘𝗦𝗧 𝗨𝗦𝗘𝗥𝗦 👑\n━━━━━━━━━━━\n${topUsersList.join("\n")}`;
 
     message.reply(messageText);
   }
