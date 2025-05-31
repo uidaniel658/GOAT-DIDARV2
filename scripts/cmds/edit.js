@@ -26,19 +26,19 @@ module.exports = {
 
     api.setMessageReaction("🦆", event.messageID, () => {}, true);
 
-    message.reply("🦆| Editing image, please wait...", async (err, info) => {
+    message.reply("🔄| Editing image, please wait...", async (err, info) => {
       try {
         const attachment = await global.utils.getStreamFromURL(geditUrl);
         message.reply({ 
-          body: `🔥| Here is your edited image!`, 
+          body: `✅| Here is your edited image!`, 
           attachment: attachment 
         });
 
         let ui = info.messageID;          
         message.unsend(ui);
-        api.setMessageReaction("🌚", event.messageID, () => {}, true);
+        api.setMessageReaction("✅", event.messageID, () => {}, true);
       } catch (error) {
-        message.reply("📛| There was an error editing your image.");
+        message.reply("❌| There was an error editing your image.");
         console.error(error);
       }
     });
