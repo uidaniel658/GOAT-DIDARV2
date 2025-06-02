@@ -47,13 +47,13 @@ const onChat = async ({ api, event }) => {
       const d = response.data;
       if (d.result.includes(".jpg")) {
         ex = ".jpg";
-        cp = "Here's your Photo <😘";
+        cp = "Here's your Photo <🤖";
       } else if (d.result.includes(".png")) {
         ex = ".png";
-        cp = "Here's your Photo <😘";
+        cp = "Here's your Photo <🤖";
       } else if (d.result.includes(".jpeg")) {
         ex = ".jpeg";
-        cp = "Here's your Photo <😘";
+        cp = "Here's your Photo <🤖";
       } else {
         ex = ".mp4";
         cp = d.cp;
