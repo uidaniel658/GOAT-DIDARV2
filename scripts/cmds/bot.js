@@ -91,7 +91,7 @@ module.exports = {
       " Premer mora jole duve na😛",
       "Ufff matha gorom kore disos😒 ",
       "Boss ayan er chipay😜 ",
-      "bashi dakle boss BaYjid ke bole dimu😒 ",
+      "bashi dakle boss Didar ke bole dimu😒 ",
       "Xhipay atke gaci jan🥲 ",
       "Washroom a🤣 ",
       "bado maser kawwa police amar sawwa😞 ",
