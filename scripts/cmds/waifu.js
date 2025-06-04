@@ -26,14 +26,14 @@ module.exports = {
 				let img = res2.url
 
 				const form = {
-					body: `𝙽𝚒𝚂𝚊𝙽`
+					body: `𝙳𝙸𝙳𝙰𝚁`
 
 				};
 				if (img)
 					form.attachment = await global.utils.getStreamFromURL(img);
 				message.reply(form);
 			} catch (e) {
-				message.reply(`🥺 Not Found`)
+				message.reply(`🚬 Not Found`)
 			}
 
 
